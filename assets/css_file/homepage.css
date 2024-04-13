@@ -1,0 +1,145 @@
+/* Reset styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 5px 0;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+.logo {
+    width: 100px; 
+    height: auto; 
+    display: block; 
+    margin: 0; 
+  }
+  .homeImage {
+    width: 100%;
+    height: auto;
+    padding: 60px;
+    display: none; /* Hide all images initially */
+  }
+  
+  /* Add animation effects */
+  .fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  /* Mission & Vision Section */
+#mission-vision .container {
+  
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#mission-vision h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.mission, .vision {
+  margin-bottom: 20px;
+}
+
+.mission h3, .vision h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.mission p, .vision p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Contact Us Section */
+#contact-us .container {
+
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#contact-us h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+/* Eco Services Section */
+#eco-services .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#eco-services h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.service {
+  margin-bottom: 20px;
+}
+
+.service h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* //////////

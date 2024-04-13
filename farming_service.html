@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="assets/css_file/service_reg.css">
+</head>
+<body>
+    <header>
+        <h1>Register for Our Services</h1>
+    </header>
+    <main>
+        <form id="registration-form" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" maxlength="10" placeholder="0776461602" required>
+            </div>
+            <div class="form-group">
+                <label for="services">Select Services:</label>
+                <select id="services" name="services" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="training_programs">Training Programs</option>
+                    <option value="educational_resources">Educational Resources (Workshops, Manuals, Online Courses)</option>
+                    <option value="water_conservation">Water Conservation Solutions</option>
+                    <option value="soil_health_assessment">Soil Health Assessment</option>                    
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="services">Location:</label>
+                <select id="services" name="services" required>
+                    <option value="" disabled selected>Select a Location</option>
+                    <option value="colombo">Colombo</option>
+                    <option value="kandy">Kandy</option>
+                    <option value="galle">Galle</option>
+                    <option value="jaffna">Jaffna</option>
+                    <option value="negombo">Negombo</option>
+                    <option value="matara">Matara</option>
+                    <option value="kurunegala">Kurunegala</option>
+                    <option value="anuradhapura">Anuradhapura</option>
+                    <option value="ratnapura">Ratnapura</option>
+                    <option value="trincomalee">Trincomalee</option>
+                    <option value="batticaloa">Batticaloa</option>
+                    <option value="badulla">Badulla</option>
+                    <option value="ampara">Ampara</option>
+                    <option value="polonnaruwa">Polonnaruwa</option>
+                    <option value="kalutara">Kalutara</option>
+                    <option value="kegalle">Kegalle</option>
+                    <option value="nuwara_eliya">Nuwara Eliya</option>
+                    <option value="hambantota">Hambantota</option>
+                    <option value="matale">Matale</option>
+                    <option value="gampaha">Gampaha</option>
+                    <option value="puttalam">Puttalam</option>
+                    <option value="kilinochchi">Kilinochchi</option>
+                    <option value="mannar">Mannar</option>
+                    <option value="vavuniya">Vavuniya</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Additional Message:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Department of Agriculture</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Officer Queries</title>
+<link rel="stylesheet" href="assets/css_file/field_offices_queries.css">
+</head>
+<body>
+
+<header>
+  <h1>Field Officer Queries</h1>
+</header>
+
+<main>
+  <div class="query-list">
+  <?php
+// Assuming you have a database connection established already
+$host = "220.247.246.76"; // Replace with your MySQL host
+$port = 3306; // Replace with your MySQL port if different
+$database = "your_database_name"; // Replace with your MySQL database name
+$username = "your_username"; // Replace with your MySQL username
+$password = "your_password"; // Replace with your MySQL password
+
+// Create connection
+$connection = mysqli_connect($host, $username, $password, $database, $port);
+// Query to fetch all queries from the database
+$query = "SELECT * FROM queries";
+$result = mysqli_query($connection, $query);
+
+// Check if there are any results
+if (mysqli_num_rows($result) > 0) {
+    // Loop through each row of the result set
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Output each query as a list item
+        echo "<li class='query-item'>";
+        echo "<h2>" . $row['name'] . "</h2>";
+        echo "<p>Email: " . $row['email'] . "</p>";
+        echo "<p>Subject: " . $row['subject'] . "</p>";
+        echo "<p>Message: " . $row['message'] . "</p>";
+        // If there is an attached image, display it
+        if (!empty($row['image'])) {
+            echo "<img src='path/to/images/" . $row['image'] . "' alt='Attached Image'>";
+        }
+        echo "</li>";
+    }
+} else {
+    // If there are no queries in the database
+    echo "No queries found.";
+}
+
+// Close the database connection
+mysqli_close($connection);
+?>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 Department of Agriculture&reg;</p>
+</footer>
+
+</body>
+</html>

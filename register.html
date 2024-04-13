@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Registration</title>
+  <link rel="stylesheet" href="assets/css_file/registration.css">
+</head>
+<body>
+<header>
+  <h2>Farmer Registration</h2>
+</header>
+<section id="registration">
+  <div class="container">
+    <div class="form-wrapper">
+      <form id="registration-form" action="scripts/registration.php" method="post">
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" required>
+          <span class="error-message" id="error-full-name"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <span class="error-message" id="error-email"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
+          <span class="error-message" id="error-phone"></span>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="3" required></textarea>
+          <span class="error-message" id="error-address"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+          <span class="error-message" id="error-password"></span>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+          <span class="error-message" id="error-confirm-password"></span>
+        </div>
+        <div class="form-group">
+          <label for="locations">Location:</label>
+          <select id="locations" name="locations" required>
+              <!-- <option value="" disabled selected>Select a Location</option>
+              <option value="colombo">Colombo</option>
+              <option value="kandy">Kandy</option>
+              <option value="galle">Galle</option>
+              <option value="jaffna">Jaffna</option>
+              <option value="negombo">Negombo</option>
+              <option value="matara">Matara</option>
+              <option value="kurunegala">Kurunegala</option>
+              <option value="anuradhapura">Anuradhapura</option>
+              <option value="ratnapura">Ratnapura</option>
+              <option value="trincomalee">Trincomalee</option>
+              <option value="batticaloa">Batticaloa</option>
+              <option value="badulla">Badulla</option>
+              <option value="ampara">Ampara</option>
+              <option value="polonnaruwa">Polonnaruwa</option>
+              <option value="kalutara">Kalutara</option>
+              <option value="kegalle">Kegalle</option>
+              <option value="nuwara_eliya">Nuwara Eliya</option>
+              <option value="hambantota">Hambantota</option>
+              <option value="matale">Matale</option>
+              <option value="gampaha">Gampaha</option>
+              <option value="puttalam">Puttalam</option>
+              <option value="kilinochchi">Kilinochchi</option>
+              <option value="mannar">Mannar</option>
+              <option value="vavuniya">Vavuniya</option> -->
+          </select>
+          <span class="error-message" id="error-location"></span>
+      </div>
+        <button type="submit" id="submit-button">Register</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="error-modal" class="modal">
+  <div class="modal-content">    
+    <img alt="Confirmation Image" id="notification-icon" class="imgfile">
+    <p id="error-modal-content"></p>
+    <span class="close" id="close-button">&times;</span>
+  </div>
+</div>
+
+<footer>
+  <div class="footers">
+    <p>Department of Agriculture 2024&reg; </p>
+  </div>
+</footer>
+<script src="assets/js/registration.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Query</title>
+    <link rel="stylesheet" href="assets/css_file/submit_query.css">
+
+</head>
+<body>
+    <header>
+        <h1>Submit Query</h1>
+    </header>
+    <main>
+        
+        <form id="query-form" method="post">
+            <div class="form-group">
+                <label for="locations">Location:</label>
+                <input type="text" id="locations" name="locations" required readonly>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required readonly>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required readonly>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+          
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>         
+            <button type="submit" id="submit-button">Submit</button>
+        </form>
+        <div id="confirmation-dialog" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="confirmation-message"></p>
+            </div>
+        </div>
+    </main>
+    <footer class='footers'>
+        <p>2024 Department of Agriculture&reg;</p>
+    </footer>
+        <script src="assets/js/submit_query.js"></script>
+</body>
+</html>
