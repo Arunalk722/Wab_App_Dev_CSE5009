@@ -1,28 +1,18 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const queryForm = document.getElementById('query-form');
-    const confirmationDialog = document.getElementById('confirmation-dialog');
-    const closeButton = confirmationDialog.querySelector('.close');
-    const confirmationMessage = document.getElementById('confirmation-message');
-
-    queryForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        // Display the confirmation dialog
-        confirmationDialog.style.display = 'block';
-        confirmationMessage.textContent = 'Your query has been submitted successfully!';
-    });
-
-    // Close the confirmation dialog when the close button is clicked
-    closeButton.addEventListener('click', function() {
-        confirmationDialog.style.display = 'none';
-    });
-
-    // Close the confirmation dialog when the user clicks outside of it
-    window.addEventListener('click', function(event) {
-        if (event.target === confirmationDialog) {
-            confirmationDialog.style.display = 'none';
-        }
-    });
+document.addEventListener("DOMContentLoaded", function() {    
+    fetchLocations();   
 });
 
-
+function fetchLocations() {    
+    fetch('scripts/submit_query.php')
+        .then(response => response.json())
+        .then(data => {
+            const selectElement = document.getElementById('locations');
+            data.forEach(location => {
+                const option = document.createElement('option');
+                option.value = location.location_name;
+                option.textContent = location.location_name;
+                selectElement.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching locations:', error));
+}

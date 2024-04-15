@@ -3,8 +3,7 @@ require_once 'config.php';
 
 class LocationGet {
     public function __construct() {
-        try {
-            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        try {    
                 $conn = dbConfig::initDb();
                 $sql = "SELECT location_name FROM tbl_location_list";
                 $result = $conn->query($sql);
@@ -17,7 +16,7 @@ class LocationGet {
                 $conn->close();
                 header('Content-Type: application/json');
                 echo json_encode($data);
-            }
+   
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
         }

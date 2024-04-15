@@ -5,11 +5,12 @@ class UserData {
     private $locations;  
     private $userType;
     public function __construct() {
-        if(isset($_COOKIE["EmailAddress"], $_COOKIE["FullName"], $_COOKIE["PhoneNumber"], $_COOKIE["Locations"], $_COOKIE["UserType"])) {
+        if(isset($_COOKIE["EmailAddress"], $_COOKIE["FullName"], $_COOKIE["PhoneNumber"], $_COOKIE["Locations"], $_COOKIE["UserType"],$_COOKIE["UserId"])) {
             $this->fullName = $_COOKIE["FullName"];
             $this->phoneNo = $_COOKIE["PhoneNumber"];
             $this->locations = $_COOKIE["Locations"];
             $this->userType = $_COOKIE["UserType"];
+            $this->userType = $_COOKIE["UserId"];
         } else {  
             header("Location: ../login.html");
             exit();

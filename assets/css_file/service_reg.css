@@ -24,8 +24,12 @@ main {
 
 .form-group {
     margin-bottom: 20px;
+   
 }
-
+.form-group2 {
+    margin-right: 20px;
+     margin-bottom: 20px;
+}
 label {
     display: block;
     font-weight: bold;
