@@ -177,7 +177,7 @@ function validateLocation(){
     });
   }
 });
-// registration.js
+
 
 document.addEventListener("DOMContentLoaded", function() {
   // Fetch locations from the server when the page loads
@@ -186,15 +186,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function fetchLocations() {
   // Make an AJAX request to the PHP script to retrieve locations
-  fetch('get_locations.php')
+  fetch('scripts/registration.php')
       .then(response => response.json())
       .then(data => {
           // Populate the dropdown list with locations
           const selectElement = document.getElementById('locations');
           data.forEach(location => {
               const option = document.createElement('option');
-              option.value = location;
-              option.textContent = location;
+              option.value = location.location_name; // Use location.location_name
+              option.textContent = location.location_name; // Use location.location_name
               selectElement.appendChild(option);
           });
       })

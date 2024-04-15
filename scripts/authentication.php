@@ -1,54 +1,50 @@
 <?php
-// Include the database connection file
-require_once "config.php";
+require_once 'config.php';
 
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the entered username and password from the form
-    $enteredUsername = $_POST["email_address"];
-    $enteredPassword = $_POST["pass"];
+class LoginUser {
+    private $conn;
 
-    // Prepare a SQL statement to select the user from the database
-    $sql = "SELECT * FROM tbl_users WHERE email_address = ?";
-    
-    // Prepare and bind parameters
-    $stmt = $con->prepare($sql);
-    $stmt->bind_param("s", $enteredUsername);
-
-    // Execute the statement
-    $stmt->execute();
-
-    // Get the result
-    $result = $stmt->get_result();
-
-    // Check if the user exists in the database
-    if ($result->num_rows == 1) {
-        // Fetch the row
-        $row = $result->fetch_assoc();
-        
-        // Verify the password
-        if (password_verify($enteredPassword, $row["pwd"])) {
-            // Store the username in a cookie with a 1-day expiry
-            setcookie("username", $enteredUsername, time() + (86400 * 1), "/"); // 86400 = 1 day
-            
-            // Redirect the user to the dashboard or any other page
-            echo "<script>window.location.href = '../index.html';</script>"; // Redirect back to login screen
-            exit();
-        } else {
-            // If the password is incorrect, display an error message
-            echo "<script>alert('Invalid username or password. Please try again.');</script>";
-            echo "<script>window.location.href = '../login.html';</script>"; // Redirect back to login screen
-            exit();
-        }
-    } else {
-        // If the user does not exist, display an error message
-        echo "<script>alert('User does not exist.');</script>";
+    public function __construct() {
+        $this->conn = dbConfig::initDb();
     }
 
-    // Close the statement
-    $stmt->close();
+    public function _authUser() {
+        try {
+            $enteredUsername = $_POST["email_address"];
+            $enteredPassword = $_POST["pass"];
+            $sql = "SELECT * FROM tbl_users WHERE email_address = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("s", $enteredUsername);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                if (password_verify($enteredPassword, $row["pwd"])) {           
+                    $userData = serialize($row);
+                    setcookie("user_data", $userData, time() + (86400 * 1), "/");
+                    echo "<script>window.location.href = '../index.html';</script>";
+                    exit();
+                } else {
+                    echo "<script>alert('Invalid username or password. Please try again.');</script>";
+                    echo "<script>window.location.href = '../login.html';</script>";
+                    exit();
+                }
+            } else {
+                echo "<script>alert('User does not exist.');</script>";
+                echo "<script>window.location.href = '../login.html';</script>";
+                exit();
+            } 
+            $stmt->close();        
+        } catch (Exception $e) {          
+            echo "Error: " . $e->getMessage();
+        }
+    }
 }
 
-// Close the database connection
-$con->close();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $loginUser = new LoginUser();
+    $loginUser->_authUser();
+} else {
+  
+}
 ?>

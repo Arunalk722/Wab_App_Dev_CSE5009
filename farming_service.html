@@ -11,10 +11,10 @@
         <h1>Register for Our Services</h1>
     </header>
     <main>
-        <form id="registration-form" action="#" method="post">
+        <form id="farming-form" action="scripts/farming_service.php" method="post">
             <div class="form-group">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="full-name" name="full-name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email Address:</label>
@@ -35,48 +35,31 @@
                     <option value="soil_health_assessment">Soil Health Assessment</option>                    
                 </select>
             </div>
-
             <div class="form-group">
-                <label for="services">Location:</label>
-                <select id="services" name="services" required>
-                    <option value="" disabled selected>Select a Location</option>
-                    <option value="colombo">Colombo</option>
-                    <option value="kandy">Kandy</option>
-                    <option value="galle">Galle</option>
-                    <option value="jaffna">Jaffna</option>
-                    <option value="negombo">Negombo</option>
-                    <option value="matara">Matara</option>
-                    <option value="kurunegala">Kurunegala</option>
-                    <option value="anuradhapura">Anuradhapura</option>
-                    <option value="ratnapura">Ratnapura</option>
-                    <option value="trincomalee">Trincomalee</option>
-                    <option value="batticaloa">Batticaloa</option>
-                    <option value="badulla">Badulla</option>
-                    <option value="ampara">Ampara</option>
-                    <option value="polonnaruwa">Polonnaruwa</option>
-                    <option value="kalutara">Kalutara</option>
-                    <option value="kegalle">Kegalle</option>
-                    <option value="nuwara_eliya">Nuwara Eliya</option>
-                    <option value="hambantota">Hambantota</option>
-                    <option value="matale">Matale</option>
-                    <option value="gampaha">Gampaha</option>
-                    <option value="puttalam">Puttalam</option>
-                    <option value="kilinochchi">Kilinochchi</option>
-                    <option value="mannar">Mannar</option>
-                    <option value="vavuniya">Vavuniya</option>
+                <label for="locations">Location:</label>
+                <select id="locations" name="locations" required>
+                    <option value="" disabled selected>Select a Location</option>             
                 </select>
+                <span class="error-message" id="error-location"></span>
             </div>
             
             <div class="form-group">
                 <label for="message">Additional Message:</label>
                 <textarea id="message" name="message" rows="5"></textarea>
             </div>
-            <button type="submit">Register</button>
+            <button type="submit" id="submit-button">Register</button>
         </form>
     </main>
+    <div id="error-modal" class="modal">
+        <div class="modal-content">    
+          <img alt="Confirmation Image" id="notification-icon" class="imgfile">
+          <p id="error-modal-content"></p>
+          <span class="close" id="close-button">&times;</span>
+        </div>
+      </div>
     <footer>
         <p>&copy; 2024 Department of Agriculture</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="assets/js/farming_service.js"></script>
 </body>
 </html>
