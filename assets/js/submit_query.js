@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     const locationsDropdown = document.getElementById('locations');
     const servicesDropdown = document.getElementById('services');  
-   
     const fullName = getCookie("FullName");
     const emailAddress = getCookie("EmailAddress");    
     document.getElementById('email').value = emailAddress;       
     document.getElementById('name').value = fullName;
-
+    const form = document.getElementById('query-form');
+    const submitButton = document.getElementById('submit-button');
+    
     fetchLocations();
 
     function getCookie(cname) {
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function fetchLocations() {    
-        fetch('scripts/submit_query.php')
+        fetch('scripts/submit_query_locScan.php')
             .then(response => response.json())
             .then(data => {
                 locationsDropdown.innerHTML = '';
@@ -40,11 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     option.textContent = location;
                     locationsDropdown.appendChild(option);
                 });
-           
             })
             .catch(error => console.error('Error fetching locations:', error));
     }
-    
     
     locationsDropdown.addEventListener('change', function() {
         const selectedLocation = this.value;         
@@ -66,21 +65,19 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error('Error fetching services:', error));
     }   
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const form = document.getElementById('query-form');
-        form.addEventListener('submit-button', function(event) {
-            event.preventDefault(); 
-            const formData = new FormData(form);
-            fetch('submit_query.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-            })
-            .catch(error => console.error('Error submitting query:', error));
-        });
-    });
-    
+    form.addEventListener('submit', function(event) {       
+        event.preventDefault(); 
+        console.log('Submit button clicked'); 
+        const formData = new FormData(form);
+        fetch('scripts/insert_query.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        
+        .then(data => {
+            window.alert(response.json());  
+        })
+        .catch(error => console.error('Error submitting query:', error));     
+    });   
 });
