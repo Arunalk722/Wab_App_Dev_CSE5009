@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-class SubmitQuery {
+class QuerySubmitter {
     function __construct() {
         try {
             $conn = dbConfig::initDb(); 
@@ -20,5 +20,7 @@ class SubmitQuery {
         }
     }
 }
-$submitQuery = new SubmitQuery();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $submitQuery = new QuerySubmitter();
+}
 ?>

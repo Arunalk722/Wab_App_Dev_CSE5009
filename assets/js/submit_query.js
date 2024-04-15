@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function fetchServices(location) {    
-        fetch('scripts/service_scan.php?loc=' + encodeURIComponent(location))
+        fetch('scripts/submit_query_SerScan.php?loc=' + encodeURIComponent(location))
             .then(response => response.json())
             .then(data => {
                 servicesDropdown.innerHTML = '';
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault(); 
         console.log('Submit button clicked'); 
         const formData = new FormData(form);
-        fetch('scripts/insert_query.php', {
+        fetch('scripts/QuerySubmitter.php', {
             method: 'POST',
             body: formData
         })
