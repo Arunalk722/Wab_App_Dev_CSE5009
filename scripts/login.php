@@ -21,7 +21,14 @@ class LoginUser {
                 $row = $result->fetch_assoc();
                 if (password_verify($enteredPassword, $row["pwd"])) {           
                     $userData = serialize($row);
-                    setcookie("user_data", $userData, time() + (86400 * 1), "/");
+
+                    setcookie("FullName", $row["full_name"], time() + (86400 * 1), "/");
+                    setcookie("EmailAddress", $row["email_address"], time() + (86400 * 1), "/");
+                    setcookie("PhoneNumber", $row["phone_no"], time() + (86400 * 1), "/");
+                    setcookie("FarmerAddress", $row["farmer_address"], time() + (86400 * 1), "/");
+                    setcookie("Locations", $row["locations"], time() + (86400 * 1), "/");
+                    setcookie("UserType", $row["user_type"], time() + (86400 * 1), "/");
+
                     echo "<script>window.location.href = '../index.html';</script>";
                     exit();
                 } else {

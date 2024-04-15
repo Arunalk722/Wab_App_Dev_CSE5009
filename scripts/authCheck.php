@@ -5,22 +5,17 @@ class UserData {
     private $locations;  
     private $userType;
     public function __construct() {
-        if(isset($_COOKIE["user_data"]) && !empty($_COOKIE["user_data"])) {
-            $userData = unserialize($_COOKIE["user_data"]);
-            if(is_array($userData) && isset($userData["full_name"]) && isset($userData["phone_no"]) && isset($userData["locations"]) && isset($userData["user_type"])) {
-                $this->fullName = $userData["full_name"];
-                $this->phoneNo = $userData["phone_no"];
-                $this->locations = $userData["locations"];
-                $this->userType = $userData["user_type"];
-            } else {
-                throw new Exception("Error: User data is incomplete.");
-            }
+        if(isset($_COOKIE["EmailAddress"], $_COOKIE["FullName"], $_COOKIE["PhoneNumber"], $_COOKIE["Locations"], $_COOKIE["UserType"])) {
+            $this->fullName = $_COOKIE["FullName"];
+            $this->phoneNo = $_COOKIE["PhoneNumber"];
+            $this->locations = $_COOKIE["Locations"];
+            $this->userType = $_COOKIE["UserType"];
         } else {  
             header("Location: ../login.html");
             exit();
         }
     }
-
+    
     public function getFullName() {
         return $this->fullName;
     }

@@ -11,18 +11,18 @@
         <h1>Register for Our Services</h1>
     </header>
     <main>
-        <form id="farming-form" action="scripts/farming_service.php" method="post">
+        <form id="farming-form">
             <div class="form-group">
                 <label for="name">Full Name:</label>
-                <input type="text" id="full-name" name="full-name" required>
+                <input type="text" id="full-name" name="full-name" required readonly>
             </div>
             <div class="form-group">
                 <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required readonly>
             </div>
             <div class="form-group">
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" maxlength="10" placeholder="0776461602" required>
+                <input type="tel" id="phone" name="phone" maxlength="10" placeholder="0776461602" required readonly>
             </div>
             <div class="form-group">
                 <label for="services">Select Services:</label>

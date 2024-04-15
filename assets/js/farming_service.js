@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
-    
-    fetchLocations();
+document.addEventListener("DOMContentLoaded", function() {    
+    fetchLocations();   
+    setFieldsFromCookie();
 });
 
 function fetchLocations() {    
@@ -19,6 +19,33 @@ function fetchLocations() {
         .catch(error => console.error('Error fetching locations:', error));
 }
 
+function setFieldsFromCookie() {
+    const fullName = getCookie("FullName");
+    const emailAddress = getCookie("EmailAddress");
+    const phoneNumber = getCookie("PhoneNumber");
+    const locations = getCookie("Locations");
+    document.getElementById('full-name').value = fullName;
+    document.getElementById('email').value = emailAddress;
+    document.getElementById('phone').value = phoneNumber;
+    document.getElementById('locations').value = locations;
+}
+
+function getCookie(cname) {
+    const name = cname + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const fullName = document.getElementById('full-name');
     const email = document.getElementById('email');
@@ -29,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorModalContent = document.getElementById('error-modal-content');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission behavior
+        event.preventDefault(); 
         if (validateForm()) {
             regService();
         }
