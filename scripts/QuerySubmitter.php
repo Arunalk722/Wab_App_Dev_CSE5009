@@ -7,7 +7,7 @@ class QuerySubmitter {
             $location = $_POST['locations'];
             $service = $_POST['services'];            
             $message = $_POST['message'];
-            $sql = "INSERT INTO tbl_farmar_query (farmer_id, location, service, query, log_time) VALUES (?, ?, ?, ?, NOW())";
+            $sql = "INSERT INTO tbl_farmar_query (farmer_id, locations, services, farmer_query, log_time) VALUES (?, ?, ?, ?, NOW())";
             $stmt = $conn->prepare($sql);
             $farmer_id =$_COOKIE['UserId'];
             $stmt->bind_param("isss", $farmer_id, $location, $service, $message); 

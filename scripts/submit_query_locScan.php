@@ -1,8 +1,7 @@
 <?php
 require_once 'config.php';
 
-class ListOfRegLocation {
- 
+class ListOfRegLocation { 
     function __construct() {
         try {
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -26,5 +25,9 @@ class ListOfRegLocation {
     }
 }
 
-$ListOfRegLocation = new ListOfRegLocation();
+if($_SERVER['REQUEST_METHOD']=='GET')
+{
+    $ListOfRegLocation = new ListOfRegLocation();
+}
+
 ?>

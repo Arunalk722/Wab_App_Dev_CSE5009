@@ -45,7 +45,7 @@ class UserData {
                 header("Location: ../farming_service.html");
                 exit();
             default:
-                header("Location: ../default_page.html");
+                header("Location: ../list_of_querys.html");
                 exit();
         }
     }
