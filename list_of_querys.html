@@ -13,6 +13,17 @@
 
     <div class="container" id="query-container">
         <!-- Query data will be dynamically inserted here -->
+        <div id="editDialog" class="dialog">
+          <div class="dialog-content">
+              <span class="close-btn" onclick="closeEditDialog()">&times;</span>
+              <h2>Edit Query</h2>
+              <p>Edit query with ID: <span id="editQueryId"></span></p>
+              <!-- Add your form inputs for editing the query here -->
+              <button onclick="saveEdit()">Save</button>
+              <button onclick="closeEditDialog()">Cancel</button>
+          </div>
+      </div>
+      
     </div>    
     <script src="assets/js/view_query.js"></script>
 </body>
