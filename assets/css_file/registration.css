@@ -12,7 +12,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.442); /* Transparent background color with 20% opacity */
+  background-color: rgba(255, 255, 255, 0.442);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -64,14 +64,12 @@ button {
   border-radius: 5px;
   cursor: pointer;
   display: block;
-  margin: 0 auto; /* Center the button horizontally */
+  margin: 0 auto;
 }
 
 button:hover {
   background-color: #0056b3;
 }
-
-/* Add styles for the modal */
 .modal {
   display: none;
   position: fixed;
@@ -114,11 +112,11 @@ height: auto;
 }
 .modal-content {
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center; 
 }
 
 .imgfile {
-  margin-right: 10px; /* Adjust margin between the image and paragraph */
+  margin-right: 10px;
   width: 30px;
 }
 select {
