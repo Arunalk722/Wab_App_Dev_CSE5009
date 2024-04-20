@@ -10,20 +10,29 @@
     <header>
         <h1 style="font-size: 40px;">Query List</h1>
     </header>
-
-    <div class="container" id="query-container">
-        <!-- Query data will be dynamically inserted here -->
+    <div class="container" id="query-container"> 
         <div id="editDialog" class="dialog">
           <div class="dialog-content">
               <span class="close-btn" onclick="closeEditDialog()">&times;</span>
               <h2>Edit Query</h2>
               <p>Edit query with ID: <span id="editQueryId"></span></p>
-              <!-- Add your form inputs for editing the query here -->
               <button onclick="saveEdit()">Save</button>
               <button onclick="closeEditDialog()">Cancel</button>
+              <section>
+                <div id="custom-dialog" class="dialog">
+                    <div class="dialog-content">
+                        <span class="close-btn" onclick="closeEditDialog()">&times;</span>
+                        <h2>Edit Query</h2>
+                        <p id="message-text"></p>
+                        <input type="text" id="input-text" placeholder="Enter your edit here" required>
+                        <button id="edit-button">Save</button>
+                        <button onclick="closeEditDialog()">Cancel</button>
+                    </div>
+                </div>
+            </section>
+            
           </div>
-      </div>
-      
+      </div>      
     </div>    
     <script src="assets/js/view_query.js"></script>
 </body>

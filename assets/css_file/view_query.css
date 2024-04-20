@@ -86,7 +86,8 @@ header {
     background-color: rgb(134, 159, 228);
     padding: 5px;
     padding-left: 20px;
-}body {
+}
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -103,7 +104,6 @@ header {
     border-radius: 5px;
     padding: 20px;
 }
-
 .query-buttons {
     background-color: #007bff;
     border: 1px solid #007bff;
@@ -123,9 +123,13 @@ header {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     margin-top: 10px;
 }
-
 .query-buttons button:hover {
     background-color: #0056b3;
     color: #fff;
 }
+}
+.answer-style{   
+    background-color: rgb(134, 228, 154);
+    padding: 5px;
+    padding-left: 20px;
 }

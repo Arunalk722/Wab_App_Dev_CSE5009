@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const services = document.getElementById('services');
     const locations = document.getElementById('locations');
     const form = document.getElementById('farming-form');
-    const errorModalContent = document.getElementById('error-modal-content');
+    
 
     form.addEventListener('submit', function(event) {
         event.preventDefault(); 
@@ -125,8 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 console.log("Response from server:", data); // Log the response message
-                if (data === 'success') {                    
-                    form.reset(); // Reset the form
+                if (data === 'success') {           
+                    document.getElementById('message-text').textContent = "farming service registered successfully";
+                    document.getElementById('custom-dialog').style.display = 'block';         
+                    
+
                 } else {
                     throw new Error('Registration failed: ' + data);
                 }
@@ -134,6 +137,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 errorModalContent.textContent = error;
                 errorModal.style.display = 'block';
+            });
+            document.getElementById('ok-button').addEventListener('click', function() {
+                window.location.href = 'index.html';
             });
     }
 });

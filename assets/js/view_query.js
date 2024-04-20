@@ -21,12 +21,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 <h1 class='h1-center'><strong>${query.full_name}</strong></h1>
                 <div class="min-cont">          
                 <div><strong>Address:</strong> ${query.farmer_address}</div>
-                <div><strong>Location:</strong> ${query.location}</div>
+                <div><strong>Location:</strong> ${query.locations}</div>
                 <div><strong>Related Service:</strong> ${query.services}</div>      
                 <div><strong>Contact:</strong> ${query.email_address} ${query.phone_no}</div>      
                 <div class='right-text'>${query.log_time}</div>
                 </div>
-                <div class="query-style"><strong>Query:</strong> ${query.farmer_query}</div>           
+                <div class="query-style"><strong>Query:</strong> ${query.farmer_query}</div>    
+                <div class="answer-style"><strong>Solution:</strong> ${query.officer_solution} ${query.office_time}</div>           
                 <div class="button-container">
                 <button class="edit-btn" data-id="${query.idtbl_farmar_query}">Edit</button>
                 <button class="delete-btn" data-id="${query.idtbl_farmar_query}">Delete</button>
@@ -37,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         queryContainer.addEventListener('click', function(event) {
             const target = event.target;
-            console.log('Button Clicked:', target); // Debugging statement
+            console.log('Button Clicked:', target);
             const id = parseInt(target.getAttribute('data-id'));
-            console.log('Clicked ID:', id); // Debugging statement
+            console.log('Clicked ID:', id);
             if (!isNaN(id)) {
                 if (target.classList.contains('edit-btn')) {
                     editQuery(id);
@@ -52,9 +53,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function editQuery(id) {       
-        window.alert('Edit query with ID: ' + id);
+    function editQuery(id) {
+        const url = `update_officer_data.html?id=${id}`;
+        window.location.href = url;
     }
+    
+    
+    
 
     function deleteQuery(id) {        
         window.alert('Delete query with ID: ' + id);

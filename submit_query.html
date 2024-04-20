@@ -13,7 +13,7 @@
         <h1>Submit Query</h1>
     </header>
     <main>        
-        <form id="query-form">
+        <form id="query-form" action="scripts/authCheck.php" method="post">
             <div class="form-group">
                 <label for="locations">Location:</label>
                 <select id="locations" name="locations" required>
@@ -40,7 +40,16 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>         
-            <button type="submit" id="submit-button">Submit</button>
+            <button type="submit" id="submit" name="submit">Submit</button>
+            <section>
+                <div id="custom-dialog" class="dialog">
+                    <div class="dialog-content">
+                      <p id="message-text"></p>
+                      <button id="ok-button">Home Page</button>
+                    </div>
+                  </div>
+                  
+            </section>
         </form>    
     </main>
     <footer class='footers'>

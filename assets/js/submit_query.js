@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('email').value = emailAddress;       
     document.getElementById('name').value = fullName;
     const form = document.getElementById('query-form');
-    const submitButton = document.getElementById('submit-button');
+
     
     fetchLocations();
 
@@ -69,15 +69,30 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault(); 
         console.log('Submit button clicked'); 
         const formData = new FormData(form);
-        fetch('scripts/QuerySubmitter.php', {
+        fetch('scripts/Query_Submitter.php', {
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
-        
+        .then(response => response.text())
         .then(data => {
-            window.alert(response.json());  
+            if (data.trim() === '[true]') {                
+                document.getElementById('message-text').textContent = "Query was submitted";
+                document.getElementById('custom-dialog').style.display = 'block';
+                
+            } else {
+                document.getElementById('message-text').textContent =('Failed to submit query:', data);
+                document.getElementById('custom-dialog').style.display = 'block';
+            }
         })
         .catch(error => console.error('Error submitting query:', error));     
+        document.getElementById('message-text').textContent =('Error submitting query:', error);
+        document.getElementById('custom-dialog').style.display = 'block';
     });   
+    document.getElementById('ok-button').addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
+     
+     
+    
+      
 });

@@ -185,7 +185,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function fetchLocations() {
-  // Make an AJAX request to the PHP script to retrieve locations
   fetch('scripts/registration.php')
       .then(response => response.json())
       .then(data => {
@@ -193,8 +192,8 @@ function fetchLocations() {
           const selectElement = document.getElementById('locations');
           data.forEach(location => {
               const option = document.createElement('option');
-              option.value = location.location_name; // Use location.location_name
-              option.textContent = location.location_name; // Use location.location_name
+              option.value = location.location_name; 
+              option.textContent = location.location_name;
               selectElement.appendChild(option);
           });
       })
