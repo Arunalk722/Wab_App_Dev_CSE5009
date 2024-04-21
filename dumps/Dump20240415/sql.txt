@@ -1,17 +1,15 @@
 CREATE DATABASE `doa_organic` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-CREATE TABLE `tbl_farmar_query` (
-  `idtbl_farmar_query` int NOT NULL AUTO_INCREMENT,
-  `farmer_id` int DEFAULT NULL,
-  `location` varchar(45) DEFAULT NULL,
-  `service` varchar(45) DEFAULT NULL,
-  `query` varchar(500) DEFAULT NULL,
-  `log_time` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idtbl_farmar_query`),
-  KEY `farmar_idx_idx` (`farmer_id`),
-  KEY `location_idx_idx` (`location`),
-  CONSTRAINT `farmar_idx` FOREIGN KEY (`farmer_id`) REFERENCES `tbl_users` (`idtbl_users`),
-  CONSTRAINT `location_idx` FOREIGN KEY (`location`) REFERENCES `tbl_location_list` (`location_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tbl_users` (
+  `idtbl_users` int NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(80) NOT NULL,
+  `email_address` varchar(45) NOT NULL,
+  `phone_no` varchar(10) NOT NULL,
+  `farmer_address` varchar(100) NOT NULL,
+  `pwd` varchar(255) NOT NULL,
+  `locations` varchar(45) NOT NULL,
+  `user_type` int DEFAULT '0',
+  PRIMARY KEY (`idtbl_users`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 CREATE TABLE `tbl_location_list` (
   `idtbl_area_list` int NOT NULL,
   `location_name` varchar(45) NOT NULL,
@@ -30,15 +28,20 @@ CREATE TABLE `tbl_reg_service_list` (
   PRIMARY KEY (`idtbl_reg_serviceList`),
   KEY `loc_name_idx_idx` (`location_name`),
   CONSTRAINT `loc_name_idx` FOREIGN KEY (`location_name`) REFERENCES `tbl_location_list` (`location_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-CREATE TABLE `tbl_users` (
-  `idtbl_users` int NOT NULL AUTO_INCREMENT,
-  `full_name` varchar(80) NOT NULL,
-  `email_address` varchar(45) NOT NULL,
-  `phone_no` varchar(10) NOT NULL,
-  `farmer_address` varchar(100) NOT NULL,
-  `pwd` varchar(255) NOT NULL,
-  `locations` varchar(45) NOT NULL,
-  `user_type` int DEFAULT '0',
-  PRIMARY KEY (`idtbl_users`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+SELECT * FROM doa_organic.tbl_users;
+CREATE TABLE `tbl_farmar_query` (
+  `idtbl_farmar_query` int NOT NULL AUTO_INCREMENT,
+  `farmer_id` int DEFAULT NULL,
+  `locations` varchar(45) DEFAULT NULL,
+  `services` varchar(45) DEFAULT NULL,
+  `farmer_query` varchar(500) DEFAULT NULL,
+  `log_time` varchar(45) DEFAULT NULL,
+  `officer_solution` varchar(45) DEFAULT NULL,
+  `office_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`idtbl_farmar_query`),
+  KEY `farmar_idx_idx` (`farmer_id`),
+  KEY `location_idx_idx` (`locations`),
+  CONSTRAINT `farmar_idx` FOREIGN KEY (`farmer_id`) REFERENCES `tbl_users` (`idtbl_users`),
+  CONSTRAINT `location_idx` FOREIGN KEY (`locations`) REFERENCES `tbl_location_list` (`location_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

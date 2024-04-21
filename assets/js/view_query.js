@@ -57,8 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = url;
     }
     
-    
-    
+       
 
     function deleteQuery(id) {        
         window.alert('Delete query with ID: ' + id);
