@@ -1,4 +1,4 @@
-/* General styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,8 +7,8 @@ body {
 }
 
 header {
-    background-color: #007bff;
-    color: white;
+    background-color: #333;
+    color: #fff;
     padding: 20px 0;
     text-align: center;
 }
@@ -48,14 +48,13 @@ textarea {
 
 select {
     appearance: none;
-    padding-right: 25px; /* For arrow icon */
- /*    background-image: url("arrow-down.png"); Custom arrow icon */
+    padding-right: 25px;
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
 
 textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical;
 }
 
 button[type="submit"] {
@@ -72,7 +71,8 @@ button[type="submit"]:hover {
 }
 
 footer {
-    background-color: #f8f9fa;
+    background-color: #333;
+    color: #fff;
     padding: 20px 0;
     text-align: center;
     position: fixed;

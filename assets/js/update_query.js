@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('update-query-form');
 
-    // Function to fetch data based on query ID from the URL
+
     function fetchData() {
         const urlParams = new URLSearchParams(window.location.search);
         const queryId = urlParams.get('id');

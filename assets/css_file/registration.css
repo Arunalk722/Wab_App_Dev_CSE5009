@@ -1,7 +1,6 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  background-image: url(../image/registration/reg_bg.webp);
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -18,9 +17,9 @@ body {
 }
 
 h2 {
-  color: #000000;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -105,10 +104,10 @@ button:hover {
   cursor: pointer;
 }
 .footers{
-color: #000;
-text-align: center;
-background-color: #fff;
-height: auto;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
 .modal-content {
   display: flex;

@@ -7,14 +7,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;   
-        background-image: url('../image/login_bg/bg_login.jpeg'); /* Replace 'background-image.jpg' with the path to your image */
+        background-image: url('../image/login_bg/bg_login.jpeg'); 
         background-size: cover;
         background-position: center;
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
     }
-}
+
 
 .container{
 background-color: white;
@@ -57,7 +57,7 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 homeBodyBg{
-      background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with the path to your image */
+      background-image: url('background-image.jpg'); 
         background-size: cover;
         background-position: center;
         font-family: Arial, sans-serif;

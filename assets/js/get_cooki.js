@@ -9,7 +9,6 @@ function getCookie(name) {
     return null;
 }
 
-// Get the value of the 'username' cookie
 const username = getCookie('username');
 
 if (username) {

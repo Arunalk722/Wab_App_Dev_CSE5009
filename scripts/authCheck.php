@@ -51,7 +51,7 @@ class UserData {
     }
 }
 
-// Usage:
+
 try {
     $userData = new UserData();   
     if(isset($_GET["submit_query"]) && $_GET["submit_query"] == "true") {

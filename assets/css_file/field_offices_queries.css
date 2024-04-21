@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -27,8 +27,6 @@ footer {
     padding: 20px 0;
     text-align: center;
 }
-
-/* Query List Styles */
 .query-list {
     list-style: none;
     padding: 0;
@@ -50,7 +48,6 @@ footer {
     margin-bottom: 0;
 }
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;

@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
             .then(data => {
-                console.log("Response from server:", data); // Log the response message
+                console.log("Response from server:", data); 
                 if (data === 'success') {           
                     document.getElementById('message-text').textContent = "farming service registered successfully";
                     document.getElementById('custom-dialog').style.display = 'block';         

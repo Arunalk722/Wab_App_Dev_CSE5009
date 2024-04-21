@@ -17,10 +17,10 @@ class UpdateQuerys {
             $queryId = $_POST['query-id'];
             $solution = $_POST['solution'];
             
-            // Make sure to properly sanitize and validate the input data before using it in the query
             $query = "UPDATE tbl_farmar_query SET officer_solution=?, office_time=NOW() WHERE idtbl_farmar_query=?";       
             $stmt = $conn->prepare($query);
-            $stmt->bind_param("si", $solution, $queryId); // Assuming $queryId is an integer
+            $stmt->bind_param("si", $solution, $queryId); 
+            
             $stmt->execute();
             $stmt->close();
             $response = array('success' => true);

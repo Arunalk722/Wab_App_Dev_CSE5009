@@ -1,4 +1,4 @@
-/* Reset styles */
+
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
@@ -54,10 +54,9 @@ body, h1, h2, p, ul, li {
     width: 100%;
     height: auto;
     padding: 60px;
-    display: none; /* Hide all images initially */
+    display: none; 
   }
   
-  /* Add animation effects */
   .fade-in {
     animation: fadeIn 1s ease-in-out forwards;
   }
@@ -66,7 +65,6 @@ body, h1, h2, p, ul, li {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
-  /* Mission & Vision Section */
 #mission-vision .container {
   
   margin: 0 auto;
@@ -95,7 +93,6 @@ body, h1, h2, p, ul, li {
   color: #666;
 }
 
-/* Contact Us Section */
 #contact-us .container {
 
   margin: 0 auto;
@@ -113,7 +110,6 @@ body, h1, h2, p, ul, li {
   line-height: 1.5;
   color: #666;
 }
-/* Eco Services Section */
 #eco-services .container {
   max-width: 800px;
   margin: 0 auto;
@@ -141,5 +137,3 @@ body, h1, h2, p, ul, li {
   line-height: 1.5;
   color: #666;
 }
-
-/* //////////

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Fetch query data
     fetchQueryData();
 
     function fetchQueryData() {
